@@ -1,0 +1,26 @@
+<div className="projects-section container mx-auto px-6 py-16">
+  <h2 className="text-3xl font-bold mb-6">Projects</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {projects.map((project, index) => (
+      <div key={index} className="bg-white shadow-md rounded-lg p-6">
+        <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
+        <p className="text-gray-600 mb-4">{project.description}</p>
+        <div className="flex items-center justify-between">
+          <span className={`inline-block px-2 py-1 text-sm font-semibold ${project.languageColor} text-white rounded`}>
+            {project.language}
+          </span>
+          <div className="flex items-center space-x-2">
+            <span className="flex items-center text-gray-500">
+              <Star className="w-4 h-4 mr-1" />
+              {project.stars}
+            </span>
+            <span className="flex items-center text-gray-500">
+              <GitFork className="w-4 h-4 mr-1" />
+              {project.forks}
+            </span>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
